@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "VR Extension",
+    "version": "1.0",
+    "description": "An extension that accesses host website APIs",
+    "permissions": [
+      "cookies",
+      "storage",
+      "activeTab",
+      "scripting",
+      "identity",
+      "tabs",
+      "notifications",
+      "http://*/",
+      "https://*/"
+    ],
+    "host_permissions": ["<all_urls>"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://valueresearchonline.com/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    }
+  }
+  
